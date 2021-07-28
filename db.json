@@ -67,15 +67,6 @@
       "correctIndex": 1
     },
     {
-      "prompt": "what bear is best",
-      "answer1": "a",
-      "answer2": "b",
-      "answer3": "c",
-      "answer4": "battlestar galactica",
-      "correctIndex": "3",
-      "id": 7
-    },
-    {
       "prompt": "Best time to go to the dentist?",
       "answers": [
         "2:30AM",

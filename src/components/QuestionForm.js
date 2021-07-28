@@ -8,7 +8,7 @@ function QuestionForm({ addQuestion }) {
     answer3: "",
     answer4: "",
     correctIndex: 0,
-  });
+  }); 
 
   function handleChange(event) {
     setFormData({
@@ -27,7 +27,7 @@ function QuestionForm({ addQuestion }) {
       },
       body: JSON.stringify({
         prompt: formData.prompt,
-        answers: [
+        answers: [        //needs to be array to match input of answers on question list
           formData.answer1,
           formData.answer2,
           formData.answer3,
