@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function QuestionForm({ addQuestion }) {
+function QuestionForm(props) {
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
@@ -16,10 +16,13 @@ function QuestionForm({ addQuestion }) {
       [event.target.name]: event.target.value,
     });
   }
+  // function addQuestion(newQuestion){
+  //   const updatedQuestions = [...questions, newQuestion]
+  //   setQuestions(updatedQuestions)
+  // }
 
   function handleSubmit(event) {
     event.preventDefault();
-    
     fetch("http://localhost:4000/questions", {
       method: "POST",
       headers: {
@@ -36,8 +39,9 @@ function QuestionForm({ addQuestion }) {
         correctIndex: formData.correctIndex
       })
     })
-    .then(response => response.json())
-    .then(data => addQuestion(data))   }
+  }
+    // .then(response => response.json())
+    // .then(data => addQuestion(data))   }
 
   return (
     <section>

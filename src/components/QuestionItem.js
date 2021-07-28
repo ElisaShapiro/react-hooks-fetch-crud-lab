@@ -1,6 +1,6 @@
 import React from "react";
 
-function QuestionItem({ question, handleDeleteQuestion }) {
+function QuestionItem({ question, handleDeleteQuestion, handleChangeAnswer }) {
   const { id, prompt, answers, correctIndex } = question;
 
   const options = answers ? answers.map((answer, index) => (
@@ -11,11 +11,13 @@ function QuestionItem({ question, handleDeleteQuestion }) {
   //getting errors after set up form on this mapping - need this in order for initial load so that when no answers to map through its null
 
   function onDeleteQuestion(){
-    fetch(`http://localhost:4000/questions/${id}`, {
-      method: "DELETE"
-    })
     handleDeleteQuestion(question.id)
   }
+
+  function onChangeAnswer(e){
+    handleChangeAnswer(id, parseInt(e.target.value))
+  }
+  
 
   return (
     <li>
@@ -23,7 +25,7 @@ function QuestionItem({ question, handleDeleteQuestion }) {
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex}>{options}</select>
+        <select onChange={onChangeAnswer} defaultValue={correctIndex}>{options}</select>
       </label>
       <button onClick={onDeleteQuestion}>Delete Question</button>
     </li>
