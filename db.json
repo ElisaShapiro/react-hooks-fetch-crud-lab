@@ -64,7 +64,29 @@
         "reactive",
         "controlled"
       ],
-      "correctIndex": "2"
+      "correctIndex": 3
+    },
+    {
+      "prompt": "What time is best to go to dentist?",
+      "answers": [
+        "2:30AM",
+        "Tooth-hurty",
+        "Crentist",
+        "2:30PM"
+      ],
+      "correctIndex": "1",
+      "id": 7
+    },
+    {
+      "prompt": "What bear is best",
+      "answers": [
+        "Bears",
+        "Beets",
+        "BattleStar",
+        "Gallactica"
+      ],
+      "correctIndex": 0,
+      "id": 8
     }
   ]
 }

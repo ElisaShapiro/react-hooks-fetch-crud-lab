@@ -33,7 +33,7 @@ function QuestionList() {
     }).then(response => response.json())
     .then((updatedQuestion) => {
       const updatedQuestions = questions.map((question) => {
-        if (question.id === updatedQuestion.id) return updatedQuestions
+        if (question.id === updatedQuestion.id) return updatedQuestion
         return question
       })
       setQuestions(updatedQuestions)
