@@ -13,10 +13,15 @@ function App() {
     .then(questionData => setQuestions(questionData))
   }, []);
 
+  function addQuestion(newQuestion){
+    const updatedQuestions = [...questions, newQuestion]
+    setQuestions(updatedQuestions)
+  }
+
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm /> : <QuestionList questions={questions}/>}
+      {page === "Form" ? <QuestionForm addQuestion={addQuestion} /> : <QuestionList questions={questions}/>}
     </main>
   );
 }
